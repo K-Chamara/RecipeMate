@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Trending Recipe Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/trendingRecipeSection"
+        android:layout_width="match_parent"
+        android:layout_height="351dp"
+        android:layout_marginTop="175dp"
+        android:background="@drawable/shadow_bg"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupCategories">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTrendingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trending Recipe"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Recipe Image -->
+        <ImageView
+            android:id="@+id/ivTrendingRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pasta_spaghetti_with_shrimps_sauce"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTrendingTitle" />
+
+        <!-- Favorite Button -->
+        <ImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            android:src="@drawable/baseline_favorite_24"
+            app:layout_constraintEnd_toEndOf="@id/ivTrendingRecipe"
+            app:layout_constraintTop_toTopOf="@id/ivTrendingRecipe"
+            app:tint="@color/fav_icon_select" />
+
+        <!-- Recipe Name -->
+
+        <!-- Description -->
+
+        <!-- Timer Icon -->
+
+        <!-- Cooking Time -->
+
+        <!-- Star Rating -->
+
+        <TextView
+            android:id="@+id/tvRecipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Spaghetti with Shrimps sauce"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivTrendingRecipe" />
+
+        <TextView
+            android:id="@+id/tvRecipeDescription"
+            android:layout_width="243dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="This is a quick overview of the ingredients..."
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeName" />
+
+        <ImageView
+            android:id="@+id/ivTimer"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/baseline_punch_clock_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvRecipeDescription"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tvCookingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="20min"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/ivTimer"
+            app:layout_constraintTop_toBottomOf="@+id/ivFavorite"
+            app:layout_constraintVertical_bias="0.913" />
+
+        <TextView
+            android:id="@+id/tvRecipeRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="⭐ 5"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvRecipeName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.831" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvPopularRecipes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:padding="20sp"
+        android:text="Popular Recipe"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_anchor="@+id/tvPopularRecipes"
+        app:layout_anchorGravity="top|center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPopularRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="262dp"
+        android:layout_marginTop="570dp"
+        android:orientation="horizontal" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

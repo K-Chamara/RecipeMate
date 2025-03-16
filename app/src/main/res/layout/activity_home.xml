@@ -1,0 +1,155 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Home">
+
+    <!-- Top Bar (Header) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_gradient"
+        android:padding="30dp"
+        android:paddingTop="50sp">
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hey! Kaveen"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What are you cooking today?"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUsername" />
+
+        <!-- Search Icon -->
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_notifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Category Selector (RadioGroup) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+
+        android:id="@+id/categorySection"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="8dp"
+        app:layout_anchor="@+id/topBar"
+        app:layout_anchorGravity="bottom|center">
+
+        <RadioGroup
+            android:id="@+id/radioGroupCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbBreakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/category_selector"
+                android:button="@null"
+                android:padding="18dp"
+                android:textStyle="bold"
+                android:text="Breakfast"
+                android:textColor="@color/category_text_selector"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rbLunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/category_selector"
+                android:textStyle="bold"
+                android:button="@null"
+                android:padding="18dp"
+                android:text="Lunch"
+                android:textColor="@color/category_text_selector"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rbDinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/category_selector"
+                android:textStyle="bold"
+                android:button="@null"
+                android:padding="18dp"
+                android:text="Dinner"
+                android:textColor="@color/category_text_selector"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rbTeaTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/category_selector"
+                android:textStyle="bold"
+                android:button="@null"
+                android:padding="18dp"
+                android:text="Tea time"
+                android:textColor="@color/category_text_selector"
+                android:textSize="14sp" />
+
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- FragmentContainerView for Dynamic Content -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/categorySection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verylightBlue"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_gravity="bottom"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

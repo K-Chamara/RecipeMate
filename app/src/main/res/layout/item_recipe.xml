@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="160dp"
+    android:layout_height="210dp"
+    app:cardCornerRadius="12dp"
+    android:layout_margin="8dp"
+    app:cardElevation="6dp"
+    android:id="@+id/cardView"
+    android:background="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@android:color/white">
+
+        <!-- Recipe Image -->
+        <ImageView
+            android:id="@+id/ivRecipeImage"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/strawberry_cream_filled_mini_puff_pastries_garnished_with_pistachios"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Recipe Title -->
+        <TextView
+            android:id="@+id/tvRecipeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mini puff pastries with pistachios"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/ivRecipeImage" />
+
+        <!-- Calories -->
+
+        <!-- Time -->
+
+        <TextView
+            android:id="@+id/tvCalories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="120 Kcal"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeTitle" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="4dp"
+            android:text="20 Min"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

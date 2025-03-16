@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="etSearch" type="id" />
+    <item name="tvRecommended" type="id" />
+    <item name="flowLayoutRecommended" type="id" />
+    <item name="tvAddAllergies" type="id" />
+    <item name="btnAddAllergies" type="id" />
+    <item name="btnSearch" type="id" />
+    <item name="ivClose" type="id" />
+</resources>
